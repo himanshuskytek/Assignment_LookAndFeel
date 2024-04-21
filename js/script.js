@@ -101,3 +101,50 @@ function showAllPosts() {
     document.querySelector('.cross-button').style.display = 'none'; // Hide the cross button
     crossButtonClicked = false;
 }
+
+function displayCSV(data, title) {
+            const rows = data.split('\n');
+            let html = <h2>${title}</h2><table border="2">;
+
+            rows.forEach(row => {
+                const columns = row.split(',');
+                html += '<tr>';
+                columns.forEach(column => {
+                    html += <td>${column}</td>;
+                });
+                html += '</tr>';
+            });
+
+            html += '</table>';
+            document.getElementById('excelData').innerHTML += html;
+        }
+
+const commentsCSV = `CommentID,VisitorID,PageURL,CommentText,Timestamp,Upvotes,Downvotes
+1,1,https://blog.com/post1,Great tips! Can't wait to try them out,19-04-2024 08:05,20,5
+2,2,https://blog.com/post1,Thanks for the helpful tips!,19-04-2024 09:05,15,2
+3,3,https://blog.com/post2,Interesting article!,19-04-2024 10:05,10,0`;
+
+// CSV data
+const linksCSV = `LikeDislikeID,VisitorID,PageURL,Action,Timestamp
+1,2,https://blog.com/post1,Like,19-04-2024 09:10
+2,3,https://blog.com/post1,Like,19-04-2024 10:10
+3,4,https://blog.com/post2,Like,19-04-2024 11:10
+4,5,https://blog.com/post3,Like,19-04-2024 12:10
+5,6,https://blog.com/post4,Like,19-04-2024 13:10
+6,7,https://blog.com/post5,Like,19-04-2024 14:10
+7,8,https://blog.com/post6,Like,19-04-2024 15:10`;
+
+// CSV data
+const visitorsCSV = `VisitorID,Name,Email,Timestamp,Age,Gender,Location
+1,John,john@example.com,19-04-2024 08:00,30,Male,New York
+2,Mary,mary@example.com,19-04-2024 09:00,25,Female,Los Angeles
+3,Alice,alice@example.com,19-04-2024 10:00,35,Female,Chicago
+4,Bob,bob@example.com,19-04-2024 11:00,28,Male,Houston
+5,Emma,emma@example.com,19-04-2024 12:00,40,Female,San Francisco
+6,James,james@example.com,19-04-2024 13:00,45,Male,Miami
+7,Lily,lily@example.com,19-04-2024 14:00,22,Female,Seattle`;
+
+// Display CSV data
+displayCSV(commentsCSV, 'Comments Data');
+displayCSV(linksCSV, 'Likes Data');
+displayCSV(visitorsCSV, 'Visitors Data');
