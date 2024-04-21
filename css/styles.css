@@ -334,3 +334,97 @@ nav .container{
     margin: 0 auto; /* Center the container horizontally */
     padding: 0 20px; /* Add padding to the sides */
 }
+/*create.html */
+.create-post {
+    margin-top: 50px; /* Add some space between header and form */
+}
+
+form {
+    background-color: #f2f2f2; /* Light gray background */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.edit-delete-buttons button {
+  display: inline-block; /* Ensure buttons are displayed inline */
+  margin-right: 5px; /* Add some spacing between buttons */
+  padding: 5px 10px; /* Add padding to the buttons */
+  background-color: #f0f0f0; /* Light gray background */
+  border: none; /* Remove borders */
+  border-radius: 3px; /* Add some rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.edit-delete-buttons button:hover {
+  background-color: #e0e0e0; /* Darker gray background on hover */
+}
+
+.edit-delete-buttons {
+  display: flex; /* Use flexbox for layout */
+}
+
+.edit-button, .delete-button {
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.delete-button {
+  background-color: #ff6666; /* Red background for delete button */
+  margin-left: 5px; /* Add some space between buttons */
+}
+
+.edit-button {
+  background-color:  #3498db;
+}
+
+    .link-image {
+        width: 100%;
+        max-width: 600px;
+        margin: 3rem auto;
+        position: relative;
+    }
+
+    .link-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 5%;
+    }
+
+    @media (max-width: 768px) {
+        .link-image {
+            margin: 1.5rem auto;
+        }
+    }
