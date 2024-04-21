@@ -104,13 +104,13 @@ function showAllPosts() {
 
 function displayCSV(data, title) {
             const rows = data.split('\n');
-            let html = <h2>${title}</h2><table border="2">;
+            let html = `<h2>${title}</h2><table border="2">`;
 
             rows.forEach(row => {
                 const columns = row.split(',');
                 html += '<tr>';
                 columns.forEach(column => {
-                    html += <td>${column}</td>;
+                    html += `<td>${column}</td>`;
                 });
                 html += '</tr>';
             });
