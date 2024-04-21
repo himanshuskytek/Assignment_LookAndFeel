@@ -428,3 +428,37 @@ button[type="submit"]:hover {
             margin: 1.5rem auto;
         }
     }
+
+
+/* database html css */
+
+.database .container {
+    margin: 0 auto;
+    width: 80%;
+    padding: 20px;
+}
+
+.database .container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.database .container th,
+.database .container td {
+    border: 0.5px #dddddd;
+    text-align: left;
+    padding: 5px;
+}
+
+.database .container th {
+    background-color: #f2f2f2;
+}
+
+.database .container tr:last-child td {
+    border-bottom: none;
+}
+
+.database .container h2 {
+    text-align: center;
+    color: #6f4e4e;
+}
