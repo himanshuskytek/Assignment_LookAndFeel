@@ -165,3 +165,71 @@ nav .container{
 .hero .next:hover {
     background-color: rgb(133 120 120 / 80%);
 }
+
+/* about section */
+
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-section{
+    width: 90%;
+    margin: 0 auto;
+    text-align:center;
+    display:border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about-section .container{
+    margin: 3rem 0 3rem 0;
+}
+
+.about-section h1{
+    display: block;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.about-section .member{
+    display: table-cell;
+    padding: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 991.98px) {
+    .about-section .member{
+        display: block;
+    }
+}
+
+.member .social-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.member img{
+    position: relative;
+    width: 175px;
+    height: 175px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 175px;
+    font-size: 56px;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.0);
+    margin-bottom: 40px;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    border: 1px solid #9443e0;
+    color: #9443e0;
+    overflow: hidden;
+}
