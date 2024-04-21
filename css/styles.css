@@ -233,3 +233,104 @@ nav .container{
     color: #9443e0;
     overflow: hidden;
 }
+
+
+
+/* blog section */
+
+.blog-posts {
+    text-align: center;
+    margin: 0 auto;
+    text-align:center;
+    display:border-box;
+}
+
+.blog-posts h2{
+    margin: 3rem 0 3rem 0;
+}
+
+.blog-posts .container{
+    display:inline;
+}
+
+.blog-posts .container .blog-post{
+    display: inline-block;
+    padding: 1rem;
+    text-align: center;
+}
+
+.blog-post img {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 175px;
+    font-size: 56px;
+    border-radius: 10%;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.0);
+    margin-bottom: 0px;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    color: #9443e0;
+  }
+
+  .blog-post div {
+    display: none;
+    transition: 0.6s ease;
+  }
+
+.post-meta {
+  font-style: italic;
+  color: #666;
+}
+
+/* trail */
+
+.blog-post img:hover {
+    padding:5%;
+    border:none;
+  }
+
+
+    .cross-button {
+        top: 30%;
+        right: 25%;
+        position: fixed;
+        cursor: pointer;
+        display: block;
+        z-index: 9999;
+        border: 1px solid #black;
+        padding: 10px;
+        border-radius: 50%;
+        transition: all .3s ease-out;
+        display:none;
+    }
+
+    .cross-button:hover {
+        padding:15px;
+    }
+
+    .create-button {
+      display: block;
+      width: 150px; /* Adjust width as needed */
+      margin: 0 auto; /* Centers the button horizontally */
+      text-align: center; /* Aligns text inside the button to the center */
+      padding: 10px; /* Adjust padding as needed */
+      background-color: #4CAF50; /* Green background */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+  }
+  
+  .create-button:hover {
+      background-color: #45a049; /* Darker green on hover */
+  }
+
+  .container {
+    max-width: 60%; /* Adjust the maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 20px; /* Add padding to the sides */
+}
