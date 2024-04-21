@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Travel Blog</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header> 
+    <nav>
+        <div class="container">
+            <h1 class="logo">Travel Blog</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="data.html">Database</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<section class="blog-posts">
+    <h2>Latest Travel Blog Posts</h2>
+    <div class="container">
+        <button class="cross-button" onclick="showAllPosts()">✖</button>
+        <article class="blog-post" onclick="toggleVisibility(this)">
+            <img src="https://images.unsplash.com/photo-1710839031473-27be50909585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcxMzQ1OTY2MA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" alt="Tokyo">
+            <h3>New York Big Apple Bytes</h3>
+            <div class="data">
+                <p class="post-meta">Posted on April 18, 2024</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
+                <button class="like-button">👍 Like</button>
+                <button class="dislike-button">👎 Dislike</button>
+                <span class="view-counter">Views: 0</span>
+            </div>
+        </article>
+                
+        
+        <!-- Example Blog Post 2 -->
+        <article class="blog-post" onclick="toggleVisibility(this)">
+            <img src="https://images.unsplash.com/photo-1710976329448-a5bbda1b1a83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcxMzQ1OTcyNw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" alt="Paris">
+            <h3>A Week in Paris: The City of Love</h3>
+                 <div class="data">
+                <p class="post-meta">Posted on April 15, 2024</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
+                <button class="like-button">👍 Like</button>
+                <button class="dislike-button">👎 Dislike</button>
+                <span class="view-counter">Views: 0</span>
+            </div>
+        </article>
+        <!-- Example Blog Post 3 -->
+        <article class="blog-post" onclick="toggleVisibility(this)">
+            <img src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YmFsaXx8fHx8fDE3MTM0NTk3NjM&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" alt="Bali">
+            <h3>Discovering the Beauty of Bali</h3>
+                    <div class="data">
+                <p class="post-meta">Posted on April 12, 2024</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
+                <button class="like-button">👍 Like</button>
+                <button class="dislike-button">👎 Dislike</button>
+                <span class="view-counter">Views: 0</span>
+            </div>
+        </article>
+
+                <article class="blog-post" onclick="toggleVisibility(this)">
+            <img src="https://source.unsplash.com/featured/?travel" alt="Bali">
+            <h3>Exploring the Beauty of India</h3>
+            <div class="data">
+                <p class="post-meta">Posted on April 12, 2024</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
+                <button class="like-button">👍 Like</button>
+                <button class="dislike-button">👎 Dislike</button>
+                <span class="view-counter">Views: 0</span>
+            </div>
+        </article>
+
+                <article class="blog-post" onclick="toggleVisibility(this)">
+            <img src="https://source.unsplash.com/featured/?mountain" alt="Bali">
+            <h3>Switzerland the beauty of world</h3>
+            <div class="data">
+                <p class="post-meta">Posted on April 12, 2024</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
+                <button class="like-button">👍 Like</button>
+                <button class="dislike-button">👎 Dislike</button>
+                <span class="view-counter">Views: 0</span>
+            </div>
+        </article>
+    </div>
+    <div>
+        <button class="edit-button" style="display: none;" onclick="alert('Edit functionality will be implemented soon!')">
+            <a>Edit</a>
+        </button>
+        <button class="delete-button" style="display: none;" onclick="alert('Delete functionality will be implemented soon!')">
+            <a>Delete</a>
+        </button>
+    </div>
+    <script src="js/script.js"></script>
+
+</section>
+    <button class="create-button"><a href="create.html" style="text-decoration: none; color: inherit;">Create</a></button>
+    <div class="link-image">
+        <img src="https://i.postimg.cc/90GjJBgH/Assignment-3-Viz.png" alt="">
+    </div>
+</body>
+</html>
