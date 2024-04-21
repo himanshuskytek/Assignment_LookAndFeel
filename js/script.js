@@ -76,3 +76,28 @@ function toggleVisibility(clickedElement) {
     document.querySelector('.cross-button').style.display = 'inline-block'; // Show the cross button
     crossButtonClicked = true;
 }
+
+function showAllPosts() {
+    var posts = document.querySelectorAll('.blog-post');
+    for (var i = 0; i < posts.length; i++) {
+        posts[i].style.display = 'inline-block';
+        posts[i].querySelector('.data').style.display = 'none'; // Show the data section
+    }
+
+    var createButton = document.querySelector('.create-button');
+    var linkImage = document.querySelector('.link-image');
+
+    createButton.style.display = 'block'; // Show create button when displaying all posts
+    linkImage.style.display = 'block';
+
+
+    var editButtons = document.querySelectorAll('.edit-button');
+    var deleteButtons = document.querySelectorAll('.delete-button');
+    for (var i = 0; i < editButtons.length; i++) {
+        editButtons[i].style.display = 'none'; // Hide edit buttons
+        deleteButtons[i].style.display = 'none'; // Hide delete buttons
+    }
+
+    document.querySelector('.cross-button').style.display = 'none'; // Hide the cross button
+    crossButtonClicked = false;
+}
