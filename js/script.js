@@ -119,10 +119,10 @@ function displayCSV(data, title) {
             document.getElementById('excelData').innerHTML += html;
         }
 
-const commentsCSV = `CommentID,VisitorID,PageURL,CommentText,Timestamp,Upvotes,Downvotes
-1,1,https://blog.com/post1,Great tips! Can't wait to try them out,19-04-2024 08:05,20,5
-2,2,https://blog.com/post1,Thanks for the helpful tips!,19-04-2024 09:05,15,2
-3,3,https://blog.com/post2,Interesting article!,19-04-2024 10:05,10,0`;
+const commentsCSV = `CommentID,VisitorID,PageURL,CommentText,Timestamp
+1,1,https://blog.com/post1,Great tips! Can't wait to try them out,19-04-2024 08:05
+2,2,https://blog.com/post1,Thanks for the helpful tips!,19-04-2024 09:05
+3,3,https://blog.com/post2,Interesting article!,19-04-2024 10:05`;
 
 // CSV data
 const linksCSV = `LikeDislikeID,VisitorID,PageURL,Action,Timestamp
@@ -145,6 +145,6 @@ const visitorsCSV = `VisitorID,Name,Email,Timestamp,Age,Gender,Location
 7,Lily,lily@example.com,19-04-2024 14:00,22,Female,Seattle`;
 
 // Display CSV data
-displayCSV(commentsCSV, 'Comments Data');
 displayCSV(linksCSV, 'Likes Data');
 displayCSV(visitorsCSV, 'Visitors Data');
+displayCSV(commentsCSV, 'Comments Data');
