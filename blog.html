@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Travel Blog</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <header> 
@@ -23,14 +24,14 @@
 
 <section class="blog-posts">
     <h2>Latest Travel Blog Posts</h2>
-    <div class="container">
+    <div class="container" id="blogContainer">
         <button class="cross-button" onclick="showAllPosts()">&#x2716;</button>
         <article class="blog-post" onclick="toggleVisibility(this)">
             <img src="https://images.unsplash.com/photo-1710839031473-27be50909585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcxMzQ1OTY2MA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" alt="Tokyo">
             <h3>New York Big Apple Bytes</h3>
             <div class="data">
                 <p class="post-meta">Posted on April 18, 2024</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
+                <p class="blog-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
                 <button class="like-button">&#x1F44D; Like</button>
                 <button class="dislike-button">&#x1F44E; Dislike</button>
                 <span class="view-counter">Views: 0</span>
@@ -44,7 +45,7 @@
             <h3>A Week in Paris: The City of Love</h3>
                  <div class="data">
                 <p class="post-meta">Posted on April 15, 2024</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
+                <p class="blog-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
                 <button class="like-button">&#x1F44D; Like</button>
                 <button class="dislike-button">&#x1F44E; Dislike</button>
                 <span class="view-counter">Views: 0</span>
@@ -56,7 +57,7 @@
             <h3>Discovering the Beauty of Bali</h3>
                     <div class="data">
                 <p class="post-meta">Posted on April 12, 2024</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
+                <p class="blog-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
                 <button class="like-button">&#x1F44D; Like</button>
                 <button class="dislike-button">&#x1F44E; Dislike</button>
                 <span class="view-counter">Views: 0</span>
@@ -68,19 +69,19 @@
             <h3>Exploring the Beauty of India</h3>
             <div class="data">
                 <p class="post-meta">Posted on April 12, 2024</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
+                <p class="blog-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
                 <button class="like-button">&#x1F44D; Like</button>
                 <button class="dislike-button">&#x1F44E; Dislike</button>
                 <span class="view-counter">Views: 0</span>
             </div>
         </article>
 
-                <article class="blog-post" onclick="toggleVisibility(this)">
+        <article class="blog-post" onclick="toggleVisibility(this)">
             <img src="https://source.unsplash.com/featured/?mountain" alt="Bali">
             <h3>Switzerland the beauty of world</h3>
             <div class="data">
                 <p class="post-meta">Posted on April 12, 2024</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
+                <p class="blog-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut felis at odio feugiat volutpat.</p>
                 <button class="like-button">&#x1F44D; Like</button>
                 <button class="dislike-button">&#x1F44E; Dislike</button>
                 <span class="view-counter">Views: 0</span>
@@ -88,19 +89,222 @@
         </article>
     </div>
     <div>
-        <button class="edit-button" style="display: none;" onclick="alert('Edit functionality will be implemented soon!')">
+        <button class="edit-button" style="display: none;" onclick="openEditPopup()">
             <a>Edit</a>
         </button>
-        <button class="delete-button" style="display: none;" onclick="alert('Delete functionality will be implemented soon!')">
+        <button class="delete-button" style="display: none;" onclick="deleteArticle()">
             <a>Delete</a>
         </button>
     </div>
     <script src="js/script.js"></script>
 
 </section>
-    <button class="create-button"><a href="create.html" style="text-decoration: none; color: inherit;">Create</a></button>
+<!--    <button class="create-button"><a href="create.html" style="text-decoration: none; color: inherit;">Create</a></button>-->
+    <button class="create-button" onclick="openCreatePopup()">
+        <a style="text-decoration: none; color: inherit;">Create</a>
+    </button>
+
     <div class="link-image">
-        <img src="https://i.postimg.cc/90GjJBgH/Assignment-3-Viz.png" alt="">
     </div>
+
+<div class="edit_popup" id="editPopup">
+    <label for="newImgSrc">New Image Source:</label>
+    <input type="text" id="newImgSrc"><br><br>
+    <label for="newHeading">New Heading:</label>
+    <input type="text" id="newHeading"><br><br>
+    <label for="newData">New Data:</label>
+    <textarea id="newData" rows="4" cols="50"></textarea><br><br>
+    <button onclick="editArticle()">Save Changes</button>
+    <button onclick="closeEditPopup()">Cancel</button>
+</div>
+
+<div class="create_popup" id="createPopup">
+    <label for="newImgSrc">New Image Source:</label>
+    <input type="text" id="createnewImgSrc"><br><br>
+    <label for="newHeading">New Heading:</label>
+    <input type="text" id="createnewHeading"><br><br>
+    <label for="newData">New Data:</label>
+    <textarea id="createnewData" rows="4" cols="50"></textarea><br><br>
+    <button onclick="createBlogPost()">Save Changes</button>
+    <button onclick="closeCreatePopup()">Cancel</button>
+</div>
+<section class="chart-section" style="text-align: center;">
+    <h2>Blog Statistics</h2>
+    <div class="charts-container">
+        <div class="chart" id="views-chart-container">
+        <h3>Views per Post</h3>
+        <canvas id="viewsChart"></canvas>
+    </div>
+    <div class="chart" id="likes-chart-container">
+      <h3>Likes per Post</h3>
+      <canvas id="likesChart" width="400" height="400"></canvas>
+    </div>
+    <div class="chart" id="visitors-chart-container">
+      <h3>Visitor Statistics</h3>
+      <canvas id="visitorsChart" width="400" height="400"></canvas>
+    </div>
+    <div class="chart" id="comments-chart-container">
+      <h3>Comments per Post</h3>
+      <canvas id="commentsChart" width="400" height="400"></canvas>
+    </div>
+</section>
+<script>
+
+var viewCounts = [];
+function updateChart() {
+    // Assuming viewCounts is already defined and contains the view counts per post
+    viewsChart.data.datasets[0].data = viewCounts;
+    viewsChart.update();
+}
+
+// Function to retrieve view counts from each post
+function retrieveViewCounts() {
+    var posts = document.querySelectorAll('.blog-post');
+    viewCounts = []; // Reset viewCounts array
+    for (var i = 0; i < posts.length; i++) {
+        var post = posts[i];
+        var viewCounter = post.querySelector('.view-counter');
+
+        // Extract view count from the viewCounter element
+        var viewCount = parseInt(viewCounter.innerText.replace('Views: ', ''));
+
+        // Store the view count in the viewCounts array
+        viewCounts.push(viewCount);
+    }
+}
+
+    // views Chart
+    const viewsCtx = document.getElementById('viewsChart').getContext('2d');
+    const viewsChart = new Chart(viewsCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Post 1', 'Post 2', 'Post 3', 'Post 4', 'Post 5'],
+        datasets: [{
+          label: '# of Views',
+          data: viewCounts,
+          backgroundColor: 'rgba (255, 147, 216, 1)',
+          borderColor: 'rgba(50, 147, 216, 0.6)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        animation: {
+          duration: 200,
+          easing: 'easeInOutBounce'
+        }
+      }
+    });
+
+    // Likes Chart
+    const likesCtx = document.getElementById('likesChart').getContext('2d');
+    const likesChart = new Chart(likesCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Post 1', 'Post 2', 'Post 3', 'Post 4', 'Post 5'],
+        datasets: [{
+          label: '# of Likes',
+          data: [10, 2, 20, 3, 8],
+          backgroundColor: 'rgba(255, 206, 86, 0.2)',
+          borderColor: 'rgba(255, 206, 86, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        animation: {
+          duration: 2000,
+          easing: 'easeInOutBounce'
+        }
+      }
+    });
+
+    // Visitors Chart
+    const visitorsCtx = document.getElementById('visitorsChart').getContext('2d');
+    const visitorsChart = new Chart(visitorsCtx, {
+      type: 'line',
+      data: {
+        labels: ['New York', 'Los Angeles', 'Chicago', 'Houston', 'San Francisco', 'Seattle'],
+        datasets: [{
+          label: 'Number of Visitors',
+          data: [65, 59, 80, 81, 56, 55],
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        animation: {
+          duration: 2500,
+          easing: 'easeOutElastic'
+        }
+      }
+    });
+
+    // Comments Chart
+    const commentsCtx = document.getElementById('commentsChart').getContext('2d');
+    const commentsChart = new Chart(commentsCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Post 1', 'Post 2', 'Post 3', 'Post 4', 'Post 5', 'Post 6'],
+        datasets: [{
+          label: '# of Comments',
+          data: [2, 3, 20, 5, 1, 4],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: {
+          animateScale: true,
+          animateRotate: true,
+          duration: 3000
+        }
+      }
+    });
+
+retrieveViewCounts();
+updateChart();
+
+// Example of how to simulate dynamic data update
+// Replace this with your actual logic to update viewCounts
+setInterval(function() {
+    retrieveViewCounts(); // Retrieve latest view counts
+    updateChart(); // Update the chart with new data
+}, 1000);
+    </script>
+
 </body>
 </html>
