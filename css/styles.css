@@ -462,3 +462,68 @@ button[type="submit"]:hover {
     text-align: center;
     color: #6f4e4e;
 }
+
+
+        .edit_popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid black;
+            z-index: 999;
+        }
+
+.create_popup{
+                display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid black;
+            z-index: 999;
+}
+
+.charts-container {
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  display:flex;
+}
+
+.charts-container h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.charts-container .chart {
+  margin-bottom: 3rem;
+}
+
+.charts-container .chart h3 {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+/* Style for canvas (you may not need to set the width and height here if it's in HTML) */
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 400px; /* Set to the max width you want */
+  background-color: #fff; /* Optional: if you want to see the bounds of the canvas */
+  border: 1px solid #ddd; /* Optional: if you want to see the outline of the canvas */
+  border-radius: 4px; /* Optional: if you want rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: if you want a shadow for some depth */
+  margin: 0 auto; /* Centers the canvas element */
+}
+
+@media (max-width: 991.98px) {
+    .charts-container{
+        display:block;
+    }
+}
